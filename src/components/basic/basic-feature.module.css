@@ -549,24 +549,31 @@
 }
 
 .claimButton {
-  background: #ff9940;
+  background: #666;
   color: white;
   border: none;
   padding: 0.5rem 1rem;
   border-radius: 4px;
-  cursor: pointer;
+  cursor: not-allowed;
   font-size: 1rem;
   transition: all 0.2s;
   margin-left: 1rem;
   white-space: nowrap;
+  opacity: 0.7;
 }
 
-.claimButton:hover {
+.output.success .claimButton {
+  background: #ff9940;
+  cursor: pointer;
+  opacity: 1;
+}
+
+.output.success .claimButton:hover {
   background: #ff8826;
   transform: translateY(-1px);
 }
 
-.claimButton:active {
+.output.success .claimButton:active {
   transform: translateY(0);
 }
 

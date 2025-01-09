@@ -667,17 +667,17 @@ export default function BasicFeature() {
   }, [publicKey]);
 
   const renderClaimButton = (id: number, isCorrect: boolean) => {
-    if (!isCorrect) return null;
-    
+    // 如果已经领取过，显示已领取标签
     if (claimedExercises[id]) {
       return <div className={styles.claimedBadge}>已领取</div>;
     }
-
+    
+    // 始终显示按钮，但根据状态设置不同的样式和禁用状态
     return (
       <button 
         className={styles.claimButton}
         onClick={() => claimSol(id)}
-        disabled={isClaimLoading[id]}
+        disabled={!isCorrect || isClaimLoading[id]}
       >
         {isClaimLoading[id] ? (
           <span className={styles.loading}>领取中...</span>
@@ -795,7 +795,7 @@ export default function BasicFeature() {
                   <p>{example.task}</p>
                 </div>
                 
-                <div className={styles.output}>
+                <div className={`${styles.output} ${exerciseStatus[example.id] ? styles.success : ''}`}>
                   <pre>
                     <code>{getOutputMessage(example.id, exerciseStatus[example.id])}</code>
                   </pre>
