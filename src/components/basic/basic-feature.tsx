@@ -682,13 +682,16 @@ export default function BasicFeature() {
 
   // 修改输出显示
   const getOutputMessage = (id: number, isCorrect: boolean) => {
-    if (isCorrect) {
-      if (claimedExercises[id]) {
-        return '✅ 练习已完成';
+    if (outputs[id]) {  // 只有在有输出时才显示消息
+      if (isCorrect) {
+        if (claimedExercises[id]) {
+          return '✅ 练习已完成';
+        }
+        return '✅ 恭喜！练习通过！可以领取奖励';
       }
-      return '✅ 恭喜！练习通过！可以领取奖励';
+      return '❌ 请继续尝试，还未达到练习要求';
     }
-    return '❌ 请继续尝试，还未达到练习要求';
+    return '';  // 初始状态返回空字符串
   };
 
   const runCode = async (id: number) => {
