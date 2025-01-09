@@ -94,12 +94,12 @@
 }
 
 .token.comment {
-  color: #7f848e;
+  color: #5c6370;
   font-style: italic;
 }
 
 .token.keyword {
-  color: #ff9940;
+  color: #c678dd;
 }
 
 .token.string {
@@ -115,23 +115,23 @@
 }
 
 .token.operator {
-  color: #ffb366;
+  color: #56b6c2;
 }
 
 .token.punctuation {
-  color: #d4d4d4;
+  color: #abb2bf;
 }
 
 .token.macro {
-  color: #ff7f50;
+  color: #e06c75;
 }
 
 .token.type {
-  color: #ffd700;
+  color: #e5c07b;
 }
 
 .token.variable {
-  color: #ffa07a;
+  color: #abb2bf;
 }
 
 .token.parameter {
@@ -602,4 +602,70 @@
   background: #666;
   cursor: not-allowed;
   transform: none;
+}
+
+/* 代码高亮基础样式 */
+.token {
+  font-family: 'Fira Code', monospace;
+}
+
+/* 关键字 */
+.token.keyword {
+  color: #569cd6;
+}
+
+/* 字符串 */
+.token.string {
+  color: #ce9178;
+}
+
+/* 数字 */
+.token.number {
+  color: #b5cea8;
+}
+
+/* 注释 */
+.token.comment {
+  color: #6a9955;
+  font-style: italic;
+}
+
+/* 函数 */
+.token.function {
+  color: #dcdcaa;
+}
+
+/* 类型 */
+.token.type {
+  color: #4ec9b0;
+}
+
+/* 宏 */
+.token.macro {
+  color: #c586c0;
+}
+
+/* 变量 */
+.token.variable {
+  color: #9cdcfe;
+}
+
+/* 运算符 */
+.token.operator {
+  color: #d4d4d4;
+}
+
+/* 标点符号 */
+.token.punctuation {
+  color: #d4d4d4;
+}
+
+/* 属性 */
+.token.property {
+  color: #9cdcfe;
+}
+
+/* 命名空间 */
+.token.namespace {
+  color: #4ec9b0;
 } 

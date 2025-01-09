@@ -7,10 +7,13 @@ import dynamic from 'next/dynamic';
 import AceEditor from 'react-ace';
 import { useConnection, useWallet } from '@solana/wallet-adapter-react';
 import { LAMPORTS_PER_SOL, SystemProgram, Transaction, PublicKey } from '@solana/web3.js';
+import Prism from 'prismjs';
+import '@/styles/prism-vscode.css';  // 使用自定义主题
+import 'prismjs/components/prism-rust';  // Rust 语言支持
 
 // 动态导入 Ace 编辑器的必要组件
 import 'ace-builds/src-noconflict/mode-rust';
-import 'ace-builds/src-noconflict/theme-tomorrow_night';
+import 'ace-builds/src-noconflict/theme-dracula';  // 使用 dracula 主题
 import 'ace-builds/src-noconflict/ext-language_tools';
 import 'ace-builds/src-noconflict/ext-searchbox';
 import 'ace-builds/src-noconflict/keybinding-vscode';
@@ -467,6 +470,10 @@ const CodeEditor = ({ code, onChange, onReset, onRun, isRunning = false, languag
     }
   };
 
+  useEffect(() => {
+    Prism.highlightAll();  // 高亮所有代码块
+  }, [code]);
+
   return (
     <div className={styles.editor}>
       <div className={styles.buttonContainer}>
@@ -496,7 +503,7 @@ const CodeEditor = ({ code, onChange, onReset, onRun, isRunning = false, languag
       </div>
       <AceEditor
         mode="rust"
-        theme="tomorrow_night"
+        theme="dracula"  // 使用 dracula 主题
         value={code}
         onChange={onChange}
         name="code-editor"
@@ -525,6 +532,7 @@ const CodeEditor = ({ code, onChange, onReset, onRun, isRunning = false, languag
         style={{
           width: '100%',
           height: `${editorHeight}px`, // 动态设置高度
+          backgroundColor: '#1e1e1e',  // VS Code 的背景色
         }}
         className={styles.aceEditor}
         commands={[

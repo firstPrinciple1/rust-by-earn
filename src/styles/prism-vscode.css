@@ -1,0 +1,196 @@
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #d4d4d4;
+  font-family: 'Fira Code', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  direction: ltr;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  line-height: 1.5;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+.token.comment,
+.token.block-comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #6a9955;
+}
+
+.token.punctuation {
+  color: #d4d4d4;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.function-name,
+.token.constant,
+.token.symbol {
+  color: #b5cea8;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.function,
+.token.builtin {
+  color: #ce9178;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.token.variable {
+  color: #d4d4d4;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: #569cd6;
+}
+
+.token.class-name {
+  color: #4ec9b0;
+}
+
+.token.macro {
+  color: #c586c0;
+}
+
+/* VS Code 深色主题背景色 */
+pre[class*="language-"] {
+  background: #1e1e1e;
+  padding: 1em;
+  margin: 0;
+  overflow: auto;
+}
+
+/* 行内代码 */
+:not(pre) > code[class*="language-"] {
+  padding: .1em .3em;
+  border-radius: .3em;
+  background: #1e1e1e;
+}
+
+/* 注释 */
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #6A9955;
+  font-style: italic;
+}
+
+/* 标点符号 */
+.token.punctuation {
+  color: #D4D4D4;
+}
+
+/* 属性 */
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: #9CDCFE;
+}
+
+/* 布尔值和数字 */
+.token.boolean,
+.token.number {
+  color: #B5CEA8;
+}
+
+/* 选择器和字符串 */
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: #CE9178;
+}
+
+/* 运算符 */
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  color: #D4D4D4;
+  background: transparent;
+}
+
+/* 关键字 */
+.token.keyword {
+  color: #569CD6;
+}
+
+/* 函数 */
+.token.function {
+  color: #DCDCAA;
+}
+
+/* 正则表达式 */
+.token.regex {
+  color: #D16969;
+}
+
+/* 重要标记 */
+.token.important {
+  color: #569CD6;
+  font-weight: bold;
+}
+
+/* 类名 */
+.token.class-name {
+  color: #4EC9B0;
+}
+
+/* 命名空间 */
+.token.namespace {
+  color: #4EC9B0;
+  font-style: italic;
+}
+
+/* 特殊关键字 */
+.token.special-keyword {
+  color: #C586C0;
+}
+
+/* 变量 */
+.token.variable {
+  color: #9CDCFE;
+}
+
+/* 宏 */
+.token.macro {
+  color: #C586C0;
+}
+
+/* 类型注解 */
+.token.type-annotation {
+  color: #4EC9B0;
+}
+
+/* 模块导入导出 */
+.token.module {
+  color: #569CD6;
+}
+
+/* 装饰器/注解 */
+.token.decorator {
+  color: #DCDCAA;
+} 
