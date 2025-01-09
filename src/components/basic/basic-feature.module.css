@@ -1,0 +1,602 @@
+.container {
+  width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #2d2a24;
+}
+
+.content {
+  flex: 1;
+  background: #2d2a24;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.mainContent {
+  padding: 2rem;
+  background: #2d2a24;
+}
+
+.mainContentInner {
+  width: 800px;
+  margin: 0 auto;
+}
+
+.section {
+  margin-bottom: 4rem;
+  padding-bottom: 3rem;
+}
+
+.section:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+  flex-shrink: 0;
+}
+
+.mainContent h2 {
+  color: #ffa07a;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.description {
+  color: #d4d4d4;
+  margin: 1rem 0;
+  line-height: 1.6;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.codeBlock {
+  width: 100%;
+  background: #282c34;
+  padding: 0;
+  border-radius: 6px;
+  margin: 1rem 0;
+  position: relative;
+  border: 1px solid #3d3833;
+  transition: border-color 0.2s;
+}
+
+.codeBlock:hover {
+  border-color: #4d4843;
+}
+
+.codeBlock pre {
+  margin: 0;
+  padding: 0;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.lineNumber {
+  position: absolute;
+  left: 1rem;
+  width: 2rem;
+  text-align: right;
+  color: #606366;
+  opacity: 0.6;
+  user-select: none;
+}
+
+.lineContent {
+  margin-left: 3rem;
+}
+
+.token.comment {
+  color: #7f848e;
+  font-style: italic;
+}
+
+.token.keyword {
+  color: #ff9940;
+}
+
+.token.string {
+  color: #98c379;
+}
+
+.token.function {
+  color: #61afef;
+}
+
+.token.number {
+  color: #d19a66;
+}
+
+.token.operator {
+  color: #ffb366;
+}
+
+.token.punctuation {
+  color: #d4d4d4;
+}
+
+.token.macro {
+  color: #ff7f50;
+}
+
+.token.type {
+  color: #ffd700;
+}
+
+.token.variable {
+  color: #ffa07a;
+}
+
+.token.parameter {
+  color: #ffb366;
+}
+
+.explanation {
+  margin-top: 2rem;
+  flex-shrink: 0;
+}
+
+.explanation h3 {
+  color: #ffa07a;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.output {
+  width: 100%;
+  background: #252220;
+  padding: 1rem;
+  border-radius: 6px;
+  border: 1px solid #3d3833;
+}
+
+.output code {
+  color: #d4d4d4;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.9rem;
+  white-space: pre;
+}
+
+.codeEditorWrapper {
+  position: relative;
+  min-height: 150px;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.codeEditorInput {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 1rem 3rem 1rem 4rem;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  border: none;
+  background: transparent;
+  color: transparent;
+  caret-color: #ff9940;
+  resize: none;
+  outline: none;
+  white-space: pre;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.codeEditorHighlight {
+  position: relative;
+  margin: 0;
+  padding: 1rem 3rem 1rem 4rem;
+  background: transparent;
+  pointer-events: none;
+  white-space: pre;
+}
+
+.codeEditorHighlight > pre {
+  margin: 0;
+  padding: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  white-space: pre;
+}
+
+.lineNumber {
+  position: absolute;
+  left: 1rem;
+  width: 2rem;
+  text-align: right;
+  color: #606366;
+  opacity: 0.6;
+  user-select: none;
+}
+
+.lineContent {
+  margin-left: 3rem;
+}
+
+/* 移除所有可能影响文本布局的样式 */
+.codeEditorInput::selection {
+  background: rgba(255, 153, 64, 0.3);
+  color: transparent;
+}
+
+.codeEditorHighlight * {
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  white-space: pre !important;
+}
+
+/* 统一的按钮容器 */
+.buttonContainer {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  display: flex;
+  gap: 0.5rem;
+  z-index: 2;
+}
+
+/* 统一的按钮样式 */
+.button {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #3d3833;
+  color: #ff9940;
+  border: 1px solid #4d4843;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.button:hover {
+  background: #4d4843;
+  border-color: #ff9940;
+}
+
+.button:active {
+  transform: translateY(1px);
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.loadingIcon {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.output {
+  position: relative;
+  min-height: 60px;
+}
+
+.output pre {
+  margin: 0;
+}
+
+.task {
+  background: #363636;
+  padding: 1rem;
+  border-radius: 6px;
+  margin: 1rem 0;
+  border-left: 4px solid #ff9940;
+}
+
+.task p {
+  color: #d4d4d4;
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.passedBadge {
+  display: inline-block;
+  margin-left: 1rem;
+  padding: 0.25rem 0.75rem;
+  background: #2ecc71;
+  color: white;
+  font-size: 0.9rem;
+  border-radius: 4px;
+  font-weight: normal;
+}
+
+.output.success {
+  border-color: #2ecc71;
+}
+
+.output.error {
+  border-color: #e74c3c;
+}
+
+.codeBlock::before {
+  content: "点击编辑代码";
+  position: absolute;
+  top: 0.5rem;
+  right: 3rem;
+  font-size: 0.8rem;
+  color: #606366;
+  opacity: 0;
+  transition: opacity 0.2s;
+  z-index: 2;
+}
+
+.codeBlock:hover::before {
+  opacity: 1;
+}
+
+.codeEditorInput:focus ~ .codeEditorHighlight {
+  background: #2d2d2d;
+}
+
+.codeBlock:focus-within {
+  border-color: #ff9940;
+}
+
+.codeBlock:focus-within::before {
+  opacity: 0;
+}
+
+.editor {
+  position: relative;
+  overflow: visible;
+}
+
+.aceEditor {
+  font-family: 'Fira Code', monospace !important;
+  width: 100%;
+}
+
+/* 隐藏垂直滚动条 */
+.editor :global(.ace_scrollbar-v) {
+  display: none !important;
+}
+
+/* 允许水平滚动 */
+.editor :global(.ace_scrollbar-h) {
+  height: 6px !important;
+}
+
+/* Ace Editor 自定义样式 */
+.editor :global(.ace-tomorrow-night) {
+  background: #1d1f21;
+}
+
+.editor :global(.ace_gutter) {
+  background: #1d1f21 !important;
+  color: #606366 !important;
+  border-right: 1px solid #3d3833 !important;
+}
+
+.editor :global(.ace_gutter-active-line) {
+  background: rgba(255, 153, 64, 0.1) !important;
+}
+
+.editor :global(.ace_marker-layer .ace_active-line) {
+  background: rgba(255, 153, 64, 0.05) !important;
+}
+
+.editor :global(.ace_cursor) {
+  color: #ff9940 !important;
+  width: 2px !important;
+}
+
+.editor :global(.ace_indent-guide) {
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAYAAACZgbYnAAAAEklEQVQImWNgYGBgYHB3d/8PAAOIAdULw8qMAAAAAElFTkSuQmCC") right repeat-y !important;
+  opacity: 0.2;
+}
+
+.editor :global(.ace_tooltip) {
+  background: #363636 !important;
+  color: #d4d4d4 !important;
+  border: 1px solid #4d4843 !important;
+  border-radius: 4px !important;
+}
+
+/* 选中文本的样式 */
+.editor :global(.ace_marker-layer .ace_selection) {
+  background: rgba(255, 153, 64, 0.2) !important;
+}
+
+/* 搜索结果高亮 */
+.editor :global(.ace_marker-layer .ace_selected-word) {
+  border: 1px solid rgba(255, 153, 64, 0.4) !important;
+}
+
+/* 运行按钮 */
+.runButton {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #3d3833;
+  color: #ff9940;
+  border: 1px solid #4d4843;
+  border-radius: 4px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.runButton:hover:not(:disabled) {
+  background: #4d4843;
+  border-color: #ff9940;
+}
+
+.editorActions {
+  position: absolute;
+  top: 0.5rem;
+  right: 3rem;
+  display: flex;
+  gap: 0.5rem;
+  z-index: 2;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.2s ease-in-out;
+  pointer-events: none;
+}
+
+.editorActions.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: all;
+}
+
+.actionButton {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #3d3833;
+  color: #ff9940;
+  border: 1px solid #4d4843;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.actionButton:hover {
+  background: #4d4843;
+  border-color: #ff9940;
+}
+
+.actionButton:active {
+  transform: translateY(1px);
+}
+
+/* 调整运行按钮的位置 */
+.runButton {
+  right: 0.5rem;
+}
+
+/* 移除原来的编辑提示 */
+.codeBlock::before {
+  display: none;
+}
+
+.actionButton {
+  position: relative;
+}
+
+.copyTip {
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #363636;
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  animation: fadeInOut 2s ease-in-out;
+  z-index: 10;
+}
+
+.copyTip::after {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 4px solid #363636;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translate(-50%, -10px); }
+  10% { opacity: 1; transform: translate(-50%, 0); }
+  90% { opacity: 1; transform: translate(-50%, 0); }
+  100% { opacity: 0; transform: translate(-50%, 10px); }
+}
+
+.claimContainer {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.claimButton {
+  background: #ff9940;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.2s;
+}
+
+.claimButton:hover {
+  background: #ff8826;
+  transform: translateY(-1px);
+}
+
+.claimButton:active {
+  transform: translateY(0);
+}
+
+.claimedBadge {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: #2ecc71;
+  color: white;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.loading::after {
+  content: '';
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid transparent;
+  border-top-color: currentColor;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.claimButton:disabled {
+  background: #666;
+  cursor: not-allowed;
+  transform: none;
+} 
