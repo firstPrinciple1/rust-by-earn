@@ -9,7 +9,7 @@ export function SolanaFeature() {
         <div className="text-center">
           <h1 className="text-5xl font-bold text-primary">Solana by Earn</h1>
           <div className="mt-4 text-xl text-base-content/80">
-            学习 Solana 开发，完成练习赚取奖励
+            学习 Solana 智能合约开发，完成练习赚取奖励
           </div>
         </div>
       }

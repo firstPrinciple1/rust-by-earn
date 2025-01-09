@@ -5,19 +5,17 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background: #2d2a24;
+  background: var(--b1);
 }
 
 .content {
   flex: 1;
-  background: #2d2a24;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  background: var(--b1);
 }
 
 .mainContent {
   padding: 2rem;
-  background: #2d2a24;
+  background: var(--b2);
 }
 
 .mainContentInner {
@@ -154,10 +152,10 @@
 
 .output {
   width: 100%;
-  background: #252220;
+  background: var(--b3);
   padding: 1rem;
   border-radius: 6px;
-  border: 1px solid #3d3833;
+  border: 1px solid var(--b3);
 }
 
 .output code {
